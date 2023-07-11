@@ -1,41 +1,51 @@
 $(document).ready(function () {
-
-    var currentDay = moment().format("dddd, MMMM Do");
-    $("#currentDay").text(currentDay);
-
-    // load saved events from local storage
-    loadSavedEvents();
-
-    // save button click event
-    $(".saveBtn").on("click", function () {
-        var time = $(this).data("time");
-        var description = $(`.description[data-time=${time}]`).val().trim();
-        saveEvent(time, description);
+    var date = moment();
+    var block = $("#time-blocks");
+  
+    $("#currentDay").text(date.format("dddd MMM D, YYYY"));
+  
+    block.on("click", ".saveBtn", function (event) {
+      var hour = event.target.parentElement;
+      localStorage.setItem(hour.id, hour.children[1].value);
     });
-
-    // clear All button click event
-    $(".clearBtn").on("click", function () {
-        clearAllEvents();
-    });
-
-    // thisis  to save an event to local storage
-    function saveEvent(time, description) {
-        var events = JSON.parse(localStorage.getItem("events")) || {};
-        events[time] = description;
-        localStorage.setItem("events", JSON.stringify(events));
+  
+    function init() {
+      var currentTime = moment().hour();
+  
+      for (var i = 9; i <= 17; i++) {
+        var newDiv = $("<div>");
+        var hourLabel = "hour-" + i;
+        newDiv.attr("id", hourLabel);
+  
+        if (currentTime > i) {
+          newDiv.addClass("row time-block past");
+        } else if (currentTime === i) {
+          newDiv.addClass("row time-block present");
+        } else {
+          newDiv.addClass("row time-block future");
+        }
+  
+        $("<div>")
+          .addClass("col-2 col-md-1 hour text-center py-3")
+          .text(i > 12 ? i - 12 + "PM" : i + "AM")
+          .appendTo(newDiv);
+  
+        $("<textarea>")
+          .addClass("col-8 col-md-10 description")
+          .attr("rows", "3")
+          .val(localStorage.getItem(hourLabel))
+          .appendTo(newDiv);
+  
+        $("<button>")
+          .addClass("btn saveBtn col-2 col-md-1")
+          .attr("aria-label", "save")
+          .append('<i class="fas fa-save" aria-hidden="true"></i>')
+          .appendTo(newDiv);
+  
+        block.append(newDiv);
+      }
     }
-
-    // used to load saved events from local storage
-    function loadSavedEvents() {
-        var events = JSON.parse(localStorage.getItem("events")) || {};
-        Object.keys(events).forEach(function (time) {
-            $(`.description[data-time=${time}]`).val(events[time]);
-        });
-    }
-
-    // to clear the all events from local storage
-    function clearAllEvents() {
-        localStorage.removeItem("events");
-        $(".description").val("");
-    }
-});
+  
+    init();
+  });
+  
