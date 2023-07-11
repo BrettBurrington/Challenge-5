@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work Day Scheduler</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1 class="text-center">Work Day Scheduler</h1>
+          <p class="text-center" id="currentDay"></p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col-2 hour">9 AM</div>
+        <div class="col-8 description-container">
+          <textarea class="form-control description" data-time="9"></textarea>
+        </div>
+        <div class="col-2">
+          <button class="btn btn-primary saveBtn" data-time="9">Save</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2 hour">10 AM</div>
+        <div class="col-8 description-container">
+          <textarea class="form-control description" data-time="10"></textarea>
+        </div>
+        <div class="col-2">
+          <button class="btn btn-primary saveBtn" data-time="10">Save</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2 hour">11 AM</div>
+        <div class="col-8 description-container">
+          <textarea class="form-control description" data-time="11"></textarea>
+        </div>
+        <div class="col-2">
+          <button class="btn btn-primary saveBtn" data-time="11">Save</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2 hour">12 PM</div>
+        <div class="col-8 description-container">
+          <textarea class="form-control description" data-time="12"></textarea>
+        </div>
+        <div class="col-2">
+          <button class="btn btn-primary saveBtn" data-time="12">Save</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2 hour">1 PM</div>
+        <div class="col-8 description-container">
+          <textarea class="form-control description" data-time="13"></textarea>
+        </div>
+        <div class="col-2">
+          <button class="btn btn-primary saveBtn" data-time="13">Save</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2 hour">2 PM</div>
+        <div class="col-8 description-container">
+          <textarea class="form-control description" data-time="14"></textarea>
+        </div>
+        <div class="col-2">
+          <button class="btn btn-primary saveBtn" data-time="14">Save</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2 hour">3 PM</div>
+        <div class="col-8 description-container">
+          <textarea class="form-control description" data-time="15"></textarea>
+        </div>
+        <div class="col-2">
+          <button class="btn btn-primary saveBtn" data-time="15">Save</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2 hour">4 PM</div>
+        <div class="col-8 description-container">
+          <textarea class="form-control description" data-time="16"></textarea>
+        </div>
+        <div class="col-2">
+          <button class="btn btn-primary saveBtn" data-time="16">Save</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2 hour">5 PM</div>
+        <div class="col-8 description-container">
+          <textarea class="form-control description" data-time="17"></textarea>
+        </div>
+        <div class="col-2">
+          <button class="btn btn-primary saveBtn" data-time="17">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col">
+          <button class="btn btn-danger clearBtn">Clear All</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://momentjs.com/downloads/moment.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

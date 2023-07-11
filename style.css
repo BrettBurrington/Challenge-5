@@ -1,0 +1,32 @@
+.hour {
+    padding-top: 20px;
+  }
+  
+  .description-container {
+    padding-top: 15px;
+  }
+  
+  .saveBtn {
+    margin-top: 15px;
+  }
+  
+  .saved-events {
+    margin-top: 20px;
+  }
+  
+  .past {
+    background-color: #d3d3d3;
+  }
+  
+  .present {
+    background-color: #77dd77;
+  }
+  
+  .future {
+    background-color: #d8bfd8;
+  }
+
+  
+.changeColorBtn.past {
+  background-color: #8282e7;
+}
