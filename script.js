@@ -25,7 +25,7 @@ $(document).ready(function () {
         localStorage.setItem("events", JSON.stringify(events));
     }
 
-    // Function to load saved events from local storage
+    // used to load saved events from local storage
     function loadSavedEvents() {
         var events = JSON.parse(localStorage.getItem("events")) || {};
         Object.keys(events).forEach(function (time) {
